@@ -61,7 +61,7 @@
 
   const initFallbackReveals = () => {
     const targets = document.querySelectorAll(
-      '.hero-tag, .word, .hero-sub, .float-quote, .clip-note, .hero-poster, .scroll-indicator, .hero-stats-bar, .reveal-para, .reveal-quote, .reveal-dossier, .pillar-card, .technique-item, .discourse-block, .immersive-title, .ltr-layer, .montage-frame, .montage-copy, .conclusion-body p, .stamp-text'
+      '.hero-tag, .word, .hero-sub, .float-quote, .clip-note, .hero-poster, .scroll-indicator, .hero-stats-bar, .research-panel, .why-headline, .why-copy, .hypothesis-copy, .hypothesis-evidence, .reveal-para, .reveal-quote, .reveal-dossier, .pillar-card, .technique-item, .discourse-block, .immersive-title, .ltr-layer, .montage-frame, .montage-copy, .conclusion-body p, .stamp-text'
     );
 
     const observer = new IntersectionObserver((entries) => {
@@ -122,6 +122,33 @@
       yPercent: 8,
       ease: 'none',
       scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true }
+    });
+
+    gsap.to('.research-panel', {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.12,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.research-core__grid', start: 'top 78%' }
+    });
+
+    gsap.to('.why-headline, .why-copy', {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      stagger: 0.12,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.why-layout', start: 'top 78%' }
+    });
+
+    gsap.to('.hypothesis-copy, .hypothesis-evidence', {
+      opacity: 1,
+      y: 0,
+      duration: 0.85,
+      stagger: 0.14,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.hypothesis-layout', start: 'top 76%' }
     });
 
     gsap.utils.toArray('.reveal-para, .reveal-quote').forEach((el) => {
