@@ -526,6 +526,315 @@ strong { font-weight: 700; }
 /* ================================================================
    INTRO SECTION
 ================================================================ */
+.research-core {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(135deg, rgba(192,57,43,0.08), transparent 34%),
+    var(--paper);
+  padding: 90px 5%;
+}
+
+.research-core::before {
+  content: 'PREGUNTA HIPÓTESIS CONCLUSIÓN';
+  position: absolute;
+  left: -2vw;
+  top: 18px;
+  width: 110vw;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 8rem);
+  line-height: 0.9;
+  letter-spacing: 0.08em;
+  color: rgba(13,13,13,0.035);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.research-core__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.research-core__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px;
+}
+
+.research-panel {
+  position: relative;
+  min-height: 320px;
+  padding: clamp(28px, 4vw, 52px);
+  border: 1px solid rgba(13,13,13,0.14);
+  background: var(--white);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.research-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--noise-url);
+  opacity: 0.055;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.research-question {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.research-hypothesis {
+  background: var(--blue);
+  color: var(--paper);
+}
+
+.research-conclusion-card {
+  background: var(--red);
+  color: var(--paper);
+}
+
+.research-kicker {
+  display: inline-flex;
+  margin-bottom: 24px;
+  padding: 7px 10px 5px;
+  background: var(--paper);
+  color: var(--red);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+}
+
+.research-question .research-kicker {
+  background: var(--red);
+  color: var(--paper);
+}
+
+.research-panel h2 {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.8vw, 5.4rem);
+  line-height: 0.96;
+  letter-spacing: 0.015em;
+  max-width: 900px;
+}
+
+.research-hypothesis h2,
+.research-conclusion-card h2 {
+  font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+}
+
+.research-panel p {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  margin-top: 24px;
+  font-family: var(--font-condensed);
+  font-size: clamp(1rem, 1.45vw, 1.18rem);
+  font-weight: 300;
+  line-height: 1.55;
+  color: currentColor;
+  opacity: 0.76;
+}
+
+/* ================================================================
+   WHY SECTION
+================================================================ */
+.why-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--white);
+  padding: 100px 5%;
+}
+
+.why-section::before {
+  content: 'CONTEXTO JÓVENES REDES CRÍTICA';
+  position: absolute;
+  right: -12vw;
+  bottom: -12px;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 9vw, 9rem);
+  line-height: 0.85;
+  letter-spacing: 0.08em;
+  color: rgba(26,43,94,0.055);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.why-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.why-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(34px, 6vw, 80px);
+  align-items: start;
+}
+
+.why-headline,
+.why-copy {
+  opacity: 0;
+  transform: translateY(46px);
+}
+
+.why-headline span {
+  display: inline-flex;
+  margin-bottom: 22px;
+  padding: 8px 12px 6px;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+}
+
+.why-headline h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6.5vw, 6.4rem);
+  line-height: 0.94;
+  letter-spacing: 0.015em;
+  color: var(--ink);
+}
+
+.why-copy {
+  padding: clamp(28px, 4vw, 46px);
+  background: var(--paper);
+  border-left: 5px solid var(--blue);
+  box-shadow: 10px 10px 0 rgba(13,13,13,0.09);
+}
+
+.why-copy p {
+  font-family: var(--font-condensed);
+  font-size: clamp(1rem, 1.55vw, 1.18rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(0,0,0,0.74);
+}
+
+.why-copy p + p {
+  margin-top: 18px;
+}
+
+/* ================================================================
+   HYPOTHESIS SECTION
+================================================================ */
+.hypothesis-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper-dark);
+  padding: 100px 5%;
+}
+
+.hypothesis-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(192,57,43,0.16), transparent 38%),
+    repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(13,13,13,0.035) 8px, rgba(13,13,13,0.035) 9px);
+  pointer-events: none;
+}
+
+.hypothesis-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.hypothesis-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr) 280px;
+  gap: 34px;
+  align-items: stretch;
+}
+
+.hypothesis-stamp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 360px;
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 4rem);
+  letter-spacing: 0.08em;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  box-shadow: 10px 10px 0 rgba(13,13,13,0.15);
+}
+
+.hypothesis-copy {
+  padding: clamp(34px, 5vw, 64px);
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid rgba(255,255,255,0.12);
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.hypothesis-copy h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  line-height: 0.94;
+  letter-spacing: 0.015em;
+  max-width: 900px;
+}
+
+.hypothesis-copy p {
+  max-width: 760px;
+  margin-top: 22px;
+  font-family: var(--font-condensed);
+  font-size: clamp(1rem, 1.5vw, 1.18rem);
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.72);
+}
+
+.hypothesis-evidence {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.hypothesis-evidence div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 28px;
+  background: var(--blue);
+  color: var(--paper);
+}
+
+.hypothesis-evidence strong {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  line-height: 1;
+  color: var(--red-bright);
+}
+
+.hypothesis-evidence span {
+  margin-top: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.62);
+}
+
 .intro-section {
   background: var(--white);
   padding: 100px 5% 0;
@@ -1452,6 +1761,28 @@ strong { font-weight: 700; }
   .intro-grid {
     grid-template-columns: 220px minmax(0, 1fr);
   }
+  .research-core__grid {
+    grid-template-columns: 1fr;
+  }
+  .research-panel {
+    min-height: 260px;
+  }
+  .hypothesis-layout {
+    grid-template-columns: 1fr;
+  }
+  .why-layout {
+    grid-template-columns: 1fr;
+  }
+  .hypothesis-stamp {
+    min-height: auto;
+    padding: 18px;
+    writing-mode: horizontal-tb;
+    transform: rotate(-1deg);
+  }
+  .hypothesis-evidence {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: none;
+  }
   .intro-dossier {
     grid-column: 1 / -1;
     max-width: 620px;
@@ -1491,6 +1822,40 @@ strong { font-weight: 700; }
 }
 
 @media (max-width: 768px) {
+  .research-core {
+    padding: 70px 5%;
+  }
+  .research-panel {
+    min-height: auto;
+  }
+  .research-panel h2 {
+    font-size: clamp(2rem, 12vw, 3.5rem);
+  }
+  .research-hypothesis h2,
+  .research-conclusion-card h2 {
+    font-size: clamp(1.7rem, 9vw, 2.6rem);
+  }
+  .hypothesis-section {
+    padding: 70px 5%;
+  }
+  .why-section {
+    padding: 70px 5%;
+  }
+  .why-copy {
+    padding: 24px;
+  }
+  .why-headline h2 {
+    font-size: clamp(2.4rem, 12vw, 4rem);
+  }
+  .hypothesis-evidence {
+    grid-template-columns: 1fr;
+  }
+  .hypothesis-copy {
+    padding: 28px;
+  }
+  .hypothesis-copy h2 {
+    font-size: clamp(2.2rem, 12vw, 4rem);
+  }
   .hero-poster {
     position: relative;
     right: auto;
