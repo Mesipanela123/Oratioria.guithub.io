@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ORATORIA — Análisis del Discurso y la Persuasión</title>
+
+  <!-- Google Fonts: Stencil-like + Editorial + Condensed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,700;0,900;1,400;1,700&family=Special+Elite&family=Playfair+Display:ital,wght@1,700;1,900&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- GSAP + ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NOISE OVERLAY — Textura de grano sobre toda la página
+  ============================================================ -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- Indicador editorial de lectura -->
+  <div class="reading-progress" aria-hidden="true">
+    <div class="reading-progress__bar" id="reading-progress"></div>
+  </div>
+
+  <!-- ============================================================
+       SECCIÓN 1: HERO
+  ============================================================ -->
+  <section class="hero" id="hero">
+
+    <!-- Capas de fondo parallax -->
+    <div class="hero-bg-layer layer-paper" aria-hidden="true"></div>
+    <div class="hero-bg-layer layer-texture" aria-hidden="true"></div>
+    <div class="hero-bg-layer layer-flames" aria-hidden="true">
+      <!-- Llamas SVG -->
+      <svg class="flames-svg" viewBox="0 0 1440 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax slice">
+        <path d="M0,600 C80,480 60,360 120,300 C80,420 140,440 160,350 C180,440 240,380 200,280 C260,380 300,340 280,240 C340,360 380,300 360,200 C420,320 460,260 440,160 C500,300 540,240 520,140 C580,260 620,200 600,100 C660,240 700,180 680,80 C740,200 780,140 760,40 C820,180 860,120 840,20 C900,160 940,100 920,0 C980,140 1020,80 1000,0 C1060,120 1100,60 1080,0 C1140,100 1180,40 1160,0 C1220,80 1260,20 1240,0 C1300,60 1340,0 1320,0 L1440,0 L1440,600 Z" fill="#C0392B" opacity="0.85"/>
+        <path d="M0,600 C100,520 80,400 140,340 C100,460 160,470 180,390 C200,470 260,410 220,310 C280,410 320,370 300,260 C360,390 400,330 380,220 C440,350 480,290 460,190 C520,330 560,270 540,160 C600,290 640,230 620,130 L720,600 Z" fill="#E74C3C" opacity="0.6"/>
+        <path d="M720,600 C800,520 780,400 840,350 C800,460 860,480 880,390 C900,470 960,420 920,320 C980,420 1020,370 1000,270 C1060,400 1100,330 1080,230 C1140,360 1180,290 1160,190 C1220,330 1260,260 1240,160 L1440,600 Z" fill="#C0392B" opacity="0.7"/>
+      </svg>
+    </div>
+
+    <!-- Collage de recortes de fondo -->
+    <div class="hero-collage" aria-hidden="true">
+      <div class="collage-piece piece-1"></div>
+      <div class="collage-piece piece-2"></div>
+      <div class="collage-piece piece-3"></div>
+    </div>
+
+    <!-- Afiche principal inspirado en collage urbano -->
+    <figure class="hero-poster" id="hero-poster">
+      <img src="assets/oratoria-reference.jpeg" alt="Collage editorial urbano sobre discurso político y protesta social" />
+      <figcaption>
+        <span>ARCHIVO VISUAL</span>
+        <strong>Discurso / calle / medio</strong>
+      </figcaption>
+    </figure>
+
+    <!-- Contenido principal del Hero -->
+    <div class="hero-content">
+      <!-- Tag superior -->
+      <div class="hero-tag" id="hero-tag">
+        <span class="tag-line">UNIVERSIDAD DE MEDELLÍN — METODOLOGÍA DE LA INVESTIGACIÓN — 2026-1</span>
+      </div>
+
+      <!-- Título principal en capas -->
+      <div class="hero-headline" id="hero-headline">
+        <div class="headline-row row-1">
+          <span class="word word-outline" data-text="ORATORIA">ORATORIA</span>
+          <span class="word word-solid" data-text="PERSUASIVA">PERSUASIVA</span>
+        </div>
+        <div class="headline-row row-2">
+          <span class="word word-stamp" data-text="Y">Y</span>
+          <span class="word word-outline word-red" data-text="PODER">PODER</span>
+          <span class="word word-solid word-invert" data-text="MEDIÁTICO">MEDIÁTICO</span>
+        </div>
+      </div>
+
+      <!-- Subtítulo editorial -->
+      <div class="hero-sub" id="hero-sub">
+        <p>Bitácora interactiva sobre percepción, persuasión y comunicación política digital a partir de 32 encuestas y entrevistas académicas.</p>
+      </div>
+
+      <!-- Quotes flotantes -->
+      <div class="hero-floating-quotes" aria-hidden="true">
+        <blockquote class="float-quote fq-1">¿Qué factores hacen que un discurso sea persuasivo e impactante?</blockquote>
+        <blockquote class="float-quote fq-2">El mensaje no viaja solo:<br>lo cargan la época, el medio y la audiencia.</blockquote>
+      </div>
+
+      <div class="hero-clippings" aria-hidden="true">
+        <span class="clip-note clip-note-a">PROMESA</span>
+        <span class="clip-note clip-note-b">MIEDO</span>
+        <span class="clip-note clip-note-c">AGENDA</span>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" id="scroll-indicator">
+        <div class="scroll-line"></div>
+        <span class="scroll-label">DESPLAZA</span>
+      </div>
+    </div>
+
+    <!-- Barra de datos estadísticos en el hero -->
+    <div class="hero-stats-bar" id="hero-stats-bar">
+      <div class="stat-item"><span class="stat-num">32</span><span class="stat-desc">Participantes encuestados</span></div>
+      <div class="stat-divider" aria-hidden="true">///</div>
+      <div class="stat-item"><span class="stat-num">87.5%</span><span class="stat-desc">Considera clave la forma del mensaje</span></div>
+      <div class="stat-divider" aria-hidden="true">///</div>
+      <div class="stat-item"><span class="stat-num">65.6%</span><span class="stat-desc">No comparte contenido político</span></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 2: INTRODUCCIÓN EDITORIAL
+  ============================================================ -->
+  <section class="intro-section" id="intro">
+    <div class="intro-grid">
+
+      <!-- Columna izquierda: número de sección + decoración -->
+      <div class="intro-aside">
+        <div class="section-marker">
+          <span class="marker-number">01</span>
+          <div class="marker-line"></div>
+          <span class="marker-label">INTRODUCCIÓN</span>
+        </div>
+        <!-- Recorte de periódico decorativo -->
+        <div class="newspaper-clipping clipping-a">
+          <p class="clipping-headline">HALLAZGO CENTRAL</p>
+          <p class="clipping-body">La audiencia aparece como Observadora Crítica No Militante: consume, analiza y desconfía, pero evita exponerse públicamente en redes.</p>
+        </div>
+      </div>
+
+      <!-- Columna derecha: texto editorial -->
+      <div class="intro-main">
+        <h2 class="intro-title reveal-text">
+          El Observador<br/><em>Crítico No Militante</em><br/>entra en escena
+        </h2>
+        <div class="intro-body">
+          <p class="reveal-para">El análisis cruza encuestas a 32 participantes con entrevistas a expertos académicos para entender cómo se persuade en la comunicación política digital. El resultado no describe una audiencia militante ni completamente pasiva, sino un usuario que mira, filtra y calcula su exposición pública.</p>
+          <p class="reveal-para">La paradoja aparece rápido: el 62.5% afirma que lo convence principalmente la lógica, pero el 87.5% reconoce que la forma del mensaje es importante o muy importante. La audiencia se piensa racional, aunque opera dentro de plataformas diseñadas para emoción, velocidad y recordación.</p>
+          <p class="reveal-para">El perfil dominante consume política en silencio: el 65.6% no comparte contenido político y el 68.8% dice no haber cambiado decisiones por influencia de terceros digitales. No es indiferencia; es una distancia estratégica frente al conflicto, la marca personal y la autenticidad del emisor.</p>
+        </div>
+
+        <!-- Pull quote interior -->
+        <blockquote class="pull-quote reveal-quote">
+          <span class="pq-mark">"</span>
+          El discurso digital persuade cuando combina<br/>sustento lógico, emoción y contexto
+          <span class="pq-mark">"</span>
+          <cite>— Proyecto de investigación</cite>
+        </blockquote>
+      </div>
+
+      <aside class="intro-dossier reveal-dossier" aria-label="Dossier visual de análisis">
+        <div class="dossier-photo">
+          <img src="assets/oratoria-reference.jpeg" alt="Detalle de referencia visual con textura de poster político urbano" />
+        </div>
+        <div class="dossier-label">DIAGNÓSTICO</div>
+        <p>La audiencia valora la crítica informada y la esperanza, pero desconfía del influencer político y mantiene distancia higiénica frente a la exposición ideológica.</p>
+      </aside>
+    </div>
+
+    <!-- Barra horizontal de palabras clave -->
+    <div class="keyword-ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>LOGOCENTRISMO</span><span>·</span>
+        <span>ESPERANZA</span><span>·</span>
+        <span>INDIGNACIÓN</span><span>·</span>
+        <span>INDECISOS</span><span>·</span>
+        <span>BODEGAS</span><span>·</span>
+        <span>CONTEXTO</span><span>·</span>
+        <span>CONSUMO SILENCIOSO</span><span>·</span>
+        <span>SIMPLICIDAD</span><span>·</span>
+        <span>CRÍTICA</span><span>·</span>
+        <span>LOGOCENTRISMO</span><span>·</span>
+        <span>ESPERANZA</span><span>·</span>
+        <span>INDIGNACIÓN</span><span>·</span>
+        <span>INDECISOS</span><span>·</span>
+        <span>BODEGAS</span><span>·</span>
+        <span>CONTEXTO</span><span>·</span>
+        <span>CONSUMO SILENCIOSO</span><span>·</span>
+        <span>SIMPLICIDAD</span><span>·</span>
+        <span>CRÍTICA</span><span>·</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 3: PILARES DE LA RETÓRICA
+  ============================================================ -->
+  <section class="pillars-section" id="pillars">
+    <div class="pillars-header">
+      <div class="section-marker light">
+        <span class="marker-number">02</span>
+        <div class="marker-line"></div>
+        <span class="marker-label">ANÁLISIS RETÓRICO</span>
+      </div>
+      <h2 class="pillars-title">Hallazgos<br/>Cuantitativos</h2>
+    </div>
+
+    <div class="pillars-grid">
+
+      <!-- Pilar ETHOS -->
+      <article class="pillar-card card-ethos" data-pillar="PARADOJA">
+        <div class="card-number">I</div>
+        <div class="card-stamp">RAZÓN / FORMA</div>
+        <h3 class="card-title">La Paradoja<br/>de la Persuasión</h3>
+        <p class="card-body">El 62.5% dice que los argumentos lógicos son el elemento que más influye al escuchar a un orador. Sin embargo, el 87.5% reconoce que la forma del mensaje es importante o muy importante para que resulte convincente.</p>
+        <div class="card-stat">
+          <div class="stat-bar"><div class="stat-fill" data-width="88"></div></div>
+          <span>87.5% valida la importancia de la forma comunicativa</span>
+        </div>
+        <div class="card-deco" aria-hidden="true">LOGOS</div>
+      </article>
+
+      <!-- Pilar PATHOS -->
+      <article class="pillar-card card-pathos" data-pillar="INFLUENCER">
+        <div class="card-number">II</div>
+        <div class="card-stamp">CREDIBILIDAD</div>
+        <h3 class="card-title">Resistencia<br/>al Influencer</h3>
+        <p class="card-body">Solo el 25% siente cercanía con influencers políticos. El 43.8% no se identifica con ellos y el 68.8% afirma que nunca ha cambiado una decisión por influencia de un tercero digital.</p>
+        <div class="card-stat">
+          <div class="stat-bar"><div class="stat-fill" data-width="69"></div></div>
+          <span>68.8% declara no cambiar decisiones por influencia digital</span>
+        </div>
+        <div class="card-deco" aria-hidden="true">DUDAR</div>
+      </article>
+
+      <!-- Pilar LOGOS -->
+      <article class="pillar-card card-logos" data-pillar="CONTEXTO">
+        <div class="card-number">III</div>
+        <div class="card-stamp">CONTEXTO</div>
+        <h3 class="card-title">El Filtro<br/>de la Crisis</h3>
+        <p class="card-body">El 81.3% reconoce que el contexto social, las crisis y las tendencias influyen en cómo recibe los mensajes políticos. La comunicación no ocurre en el vacío: se sincroniza con miedo, esperanza, indignación o fatiga informativa.</p>
+        <div class="card-stat">
+          <div class="stat-bar"><div class="stat-fill" data-width="81"></div></div>
+          <span>81.3% considera determinante el contexto social</span>
+        </div>
+        <div class="card-deco" aria-hidden="true">CRISIS</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 4: TÉCNICAS DE PERSUASIÓN — TIMELINE
+  ============================================================ -->
+  <section class="techniques-section" id="techniques">
+    <div class="section-marker">
+      <span class="marker-number">03</span>
+      <div class="marker-line"></div>
+      <span class="marker-label">BITÁCORA DE CAMPO</span>
+    </div>
+
+    <h2 class="techniques-title">Entradas<br/><span class="title-outline">del Diagnóstico</span></h2>
+
+    <div class="techniques-list">
+
+      <div class="technique-item" data-index="01">
+        <div class="tech-index">01</div>
+        <div class="tech-content">
+          <h3 class="tech-name">ENTRADA 01 — Consumo silencioso</h3>
+          <p class="tech-desc">El 65.6% no comparte contenido político en redes. La política se consume como un tema privado, casi tabú, donde el usuario evita conflictos, cuida su marca personal y observa sin militar públicamente.</p>
+        </div>
+        <div class="tech-quote">El usuario mira, compara y calla.</div>
+      </div>
+
+      <div class="technique-item" data-index="02">
+        <div class="tech-index">02</div>
+        <div class="tech-content">
+          <h3 class="tech-name">ENTRADA 02 — Lógica declarada</h3>
+          <p class="tech-desc">El 62.5% afirma que lo convencen los argumentos lógicos, aunque el 90.6% reconoce que la emoción transmitida por la imagen y la corporalidad tiene peso. La racionalidad aparece como identidad, no como garantía.</p>
+        </div>
+        <div class="tech-quote">El votante quiere sentirse racional incluso cuando la emoción opera.</div>
+      </div>
+
+      <div class="technique-item" data-index="03">
+        <div class="tech-index">03</div>
+        <div class="tech-content">
+          <h3 class="tech-name">ENTRADA 03 — Aleja y el encapsulamiento</h3>
+          <p class="tech-desc">María Alejandra Ausas plantea que las plataformas empujan discursos cortos, viscerales y recordables. La clave ética no es vaciar las ideas, sino traducir propuestas complejas a mensajes simples sin perder su trasfondo de servicio público.</p>
+        </div>
+        <div class="tech-quote">Simplicidad no es simplificación.</div>
+      </div>
+
+      <div class="technique-item" data-index="04">
+        <div class="tech-index">04</div>
+        <div class="tech-content">
+          <h3 class="tech-name">ENTRADA 04 — David, miedo y bodegas</h3>
+          <p class="tech-desc">David advierte que muchas decisiones políticas se construyen desde el miedo a que gane otro. Además, las bodegas inflan números y fabrican una falsa sensación de mayoría para activar el efecto de arrastre en indecisos.</p>
+        </div>
+        <div class="tech-quote">La viralidad no siempre es orgánica.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 5: COMPARACIÓN DE DISCURSOS — VISUAL INTERACTIVA
+  ============================================================ -->
+  <section class="comparison-section" id="comparison">
+    <div class="section-marker light">
+      <span class="marker-number">04</span>
+      <div class="marker-line"></div>
+      <span class="marker-label">COMPARATIVA</span>
+    </div>
+
+    <h2 class="comparison-title">Datos Fríos.<br/><span class="title-red">Voces Expertas.</span></h2>
+    <p class="comparison-intro">El valor del diagnóstico aparece al cruzar lo que la audiencia declara en encuestas con lo que los expertos observan en la cocina de la comunicación política digital.</p>
+
+    <div class="comparison-grid">
+
+      <!-- Discurso A -->
+      <div class="discourse-block block-a">
+        <div class="discourse-header">
+          <span class="discourse-tag">ENCUESTAS</span>
+          <span class="discourse-context">32 respuestas / percepción declarada</span>
+        </div>
+        <div class="discourse-structure">
+          <div class="structure-phase phase-crisis">
+            <span class="phase-label">FORMA</span>
+            <p>87.5% considera que la forma del mensaje es importante o muy importante para convencer.</p>
+          </div>
+          <div class="structure-phase phase-enemy">
+            <span class="phase-label">LÓGICA</span>
+            <p>62.5% afirma que los argumentos lógicos son el elemento que más influye.</p>
+          </div>
+          <div class="structure-phase phase-hero">
+            <span class="phase-label">EMOCIÓN</span>
+            <p>La esperanza conecta más: 50%. La indignación ocupa el segundo lugar: 31.3%.</p>
+          </div>
+          <div class="structure-phase phase-utopia">
+            <span class="phase-label">DISTANCIA</span>
+            <p>65.6% no comparte política y 68.8% dice no cambiar decisiones por influencers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conector central -->
+      <div class="comparison-connector" aria-hidden="true">
+        <div class="connector-label">ESTRUCTURA<br/>COMPARTIDA</div>
+        <div class="connector-arrows">
+          <div class="c-arrow">FORMA →</div>
+          <div class="c-arrow">LÓGICA →</div>
+          <div class="c-arrow">EMOCIÓN →</div>
+          <div class="c-arrow">CONTEXTO →</div>
+        </div>
+      </div>
+
+      <!-- Discurso B -->
+      <div class="discourse-block block-b">
+        <div class="discourse-header">
+          <span class="discourse-tag">ENTREVISTAS</span>
+          <span class="discourse-context">Aleja / David / mirada académica</span>
+        </div>
+        <div class="discourse-structure">
+          <div class="structure-phase phase-crisis">
+            <span class="phase-label">ALGORITMO</span>
+            <p>Aleja describe una era de mensajes breves, viscerales y adaptados a la deficiencia de atención.</p>
+          </div>
+          <div class="structure-phase phase-enemy">
+            <span class="phase-label">INDECISO</span>
+            <p>El objetivo no es convertir al convencido, sino capturar al indeciso con miedo, esperanza y aspiraciones.</p>
+          </div>
+          <div class="structure-phase phase-hero">
+            <span class="phase-label">BODEGAS</span>
+            <p>David advierte sobre viralidad artificial, falsas mayorías y efecto de arrastre.</p>
+          </div>
+          <div class="structure-phase phase-utopia">
+            <span class="phase-label">ÉTICA</span>
+            <p>La persuasión ética traduce ideas complejas sin perder el fondo programático ni el sentido de servicio.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Conclusión de la comparativa -->
+    <div class="comparison-conclusion">
+      <p>El cruce metodológico muestra una tensión central: la audiencia declara valorar la lógica, pero la plataforma premia emoción, brevedad y viralidad. La clave está en estudiar <strong>FORMA → LÓGICA → EMOCIÓN → CONTEXTO</strong> sin convertir el análisis en propaganda.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 6: EXPERIENCIA VISUAL INTERACTIVA — SCROLL REVEAL
+  ============================================================ -->
+  <section class="immersive-section" id="immersive">
+    <div class="immersive-bg" aria-hidden="true"></div>
+
+    <div class="immersive-content">
+      <div class="section-marker light">
+        <span class="marker-number">05</span>
+        <div class="marker-line"></div>
+        <span class="marker-label">COMUNICACIÓN Y MEDIOS</span>
+      </div>
+
+      <h2 class="immersive-title">La Política<br/>en Menos<br/>de 30s</h2>
+
+      <!-- Bloques de estadísticas inmersivas -->
+      <div class="immersive-stats">
+
+        <div class="imm-stat-block block-left">
+          <div class="imm-number" data-target="46.9">0</div>
+          <div class="imm-unit">% crítica / opinión</div>
+          <p class="imm-desc">El tipo de contenido más atractivo para la muestra no es el entretenimiento puro, sino la crítica y la opinión. La audiencia busca filtro analítico, no solo espectáculo.</p>
+        </div>
+
+        <div class="imm-stat-block block-center">
+          <div class="imm-big-quote">
+            "La clave no es volver mediocres las ideas, sino comunicarlas de forma simple sin vaciarlas."
+            <cite>— Síntesis de la entrevista a María Alejandra Ausas</cite>
+          </div>
+        </div>
+
+        <div class="imm-stat-block block-right">
+          <div class="imm-number" data-target="50">0</div>
+          <div class="imm-unit">% esperanza</div>
+          <p class="imm-desc">La esperanza es el principal conector emocional. La indignación aparece después con 31.3%, útil para validar una postura crítica o denunciar el estado actual.</p>
+        </div>
+
+      </div>
+
+      <!-- Capas de texto superpuestas que aparecen con scroll -->
+      <div class="layered-text-reveal">
+        <div class="ltr-layer ltr-1">LA VOZ</div>
+        <div class="ltr-layer ltr-2">EL GESTO</div>
+        <div class="ltr-layer ltr-3">LA IMAGEN</div>
+        <div class="ltr-layer ltr-4">EL PODER</div>
+      </div>
+
+      <div class="media-montage" aria-label="Montaje visual de discurso mediático">
+        <figure class="montage-frame frame-a">
+          <img src="assets/oratoria-reference.jpeg" alt="Fragmento visual de afiche político analizado como objeto mediático" />
+        </figure>
+        <div class="montage-copy">
+          <span>LECTURA VISUAL</span>
+          <p>El usuario no milita: observa. No comparte: evalúa. No cree en cualquier emisor: exige sustento.</p>
+        </div>
+        <figure class="montage-frame frame-b">
+          <img src="assets/oratoria-reference.jpeg" alt="Detalle de collage impreso con textura y contraste alto" />
+        </figure>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 7: CONCLUSIÓN
+  ============================================================ -->
+  <section class="conclusion-section" id="conclusion">
+    <div class="conclusion-inner">
+
+      <div class="section-marker">
+        <span class="marker-number">06</span>
+        <div class="marker-line"></div>
+        <span class="marker-label">REFLEXIÓN FINAL</span>
+      </div>
+
+      <h2 class="conclusion-title">
+        Diagnóstico<br/>
+        <span class="title-outline">Digital</span><br/>
+        de la<br/>
+        <span class="title-red">Persuasión</span>
+      </h2>
+
+      <div class="conclusion-body">
+        <p>El diagnóstico define una audiencia que se autopercibe racional, pero reconoce la fuerza de la forma, la emoción y el contexto. Ese choque entre lógica declarada y sensibilidad digital es el centro de la persuasión política contemporánea.</p>
+        <p>El mensaje efectivo necesita sustento intelectual, simplicidad comunicativa, esperanza como motor emocional y adaptación transmedia. Las redes no reemplazan automáticamente a los medios tradicionales: su eficacia depende del caso, la crisis y la sincronización con el entorno.</p>
+        <p><strong>El Observador Crítico No Militante no rechaza la política: la consume con cautela, desconfía del influencer y evita exhibir públicamente sus inclinaciones.</strong></p>
+      </div>
+
+      <!-- Frase final impactante -->
+      <div class="final-stamp">
+        <div class="stamp-text">OBSERVA.</div>
+        <div class="stamp-text stamp-red">FILTRA.</div>
+        <div class="stamp-text stamp-outline">DISTA.</div>
+      </div>
+
+      <!-- Créditos académicos -->
+      <div class="credits">
+        <p class="credits-label">PROYECTO DE INVESTIGACIÓN</p>
+        <p>María Isabel Gastelbondo · Daniela López · Tomás Mesías</p>
+        <p>Universidad de Medellín · Facultad de Comunicación · Metodología de la Investigación · 2026-1</p>
+        <p class="credits-note">Este proyecto es un ejercicio universitario de análisis crítico.<br/>No representa ni apoya ninguna ideología política.</p>
+      </div>
+
+    </div>
+
+    <!-- Decoración de fondo -->
+    <div class="conclusion-bg" aria-hidden="true">
+      <div class="cbg-text" aria-hidden="true">DISCURSO DISCURSO DISCURSO DISCURSO DISCURSO DISCURSO DISCURSO DISCURSO</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
